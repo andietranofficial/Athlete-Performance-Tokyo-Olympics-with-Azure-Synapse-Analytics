@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" role="img" aria-label="Pipeline flows in three phases: Data Source (CSV files uploaded to Azure Blob Storage), Data Transformation (an Azure Synapse Analytics workspace containing a Data Factory pipeline that copies data into a Dedicated SQL Pool), and Data Analytics (Power BI models and visualizes the SQL Pool data).">
+  <title>Tokyo Olympics pipeline architecture</title>
+  <desc>Three-phase flow: Data Source uploads CSV files to Azure Blob Storage; Data Transformation ingests that data inside an Azure Synapse Analytics workspace, where a Data Factory pipeline copies it into a Dedicated SQL Pool; Data Analytics connects Power BI to the SQL Pool to model and visualize it.</desc>
+
+  <rect x="0" y="0" width="1280" height="300" fill="#ffffff"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#57606A"/>
+    </marker>
+  </defs>
+
+  <!-- Phase 1: Data Source -->
+  <rect x="20" y="40" width="300" height="240" rx="14" fill="#EAF6FF" stroke="#4DA3E0" stroke-width="1.5"/>
+  <text x="170" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#0B5CAD">1 · Data Source</text>
+
+  <!-- Phase 2: Data Transformation -->
+  <rect x="360" y="40" width="560" height="240" rx="14" fill="#F1EEFB" stroke="#8B7FD1" stroke-width="1.5"/>
+  <text x="640" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#4B3F9E">2 · Data Transformation</text>
+
+  <!-- Azure Synapse Analytics workspace (container within phase 2) -->
+  <rect x="420" y="95" width="440" height="150" rx="10" fill="none" stroke="#8B7FD1" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="640" y="118" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-style="italic" fill="#4B3F9E">Azure Synapse Analytics workspace</text>
+
+  <!-- Phase 3: Data Analytics -->
+  <rect x="960" y="40" width="300" height="240" rx="14" fill="#FFF6E5" stroke="#E8B84B" stroke-width="1.5"/>
+  <text x="1110" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" fill="#8A5A00">3 · Data Analytics</text>
+
+  <!-- Arrows -->
+  <line x1="150" y1="180" x2="210" y2="180" stroke="#57606A" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="180" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#24292F">upload</text>
+
+  <line x1="290" y1="180" x2="460" y2="180" stroke="#57606A" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="375" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#24292F">ingest</text>
+
+  <line x1="540" y1="180" x2="740" y2="180" stroke="#57606A" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="640" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#24292F">copy activity</text>
+
+  <line x1="820" y1="180" x2="1070" y2="180" stroke="#57606A" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="945" y="170" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#24292F">model &amp; visualize</text>
+
+  <!-- Node A: Olympics CSV files -->
+  <rect x="70" y="140" width="80" height="80" rx="10" fill="#ffffff" stroke="#0078D4" stroke-width="2"/>
+  <g transform="translate(90,160)" fill="none" stroke="#0078D4" stroke-width="2" stroke-linejoin="round">
+    <path d="M4,2 H24 L32,10 V38 H4 Z"/>
+    <path d="M24,2 V10 H32"/>
+    <line x1="9" y1="18" x2="27" y2="18"/>
+    <line x1="9" y1="25" x2="27" y2="25"/>
+    <line x1="9" y1="32" x2="22" y2="32"/>
+  </g>
+  <text x="110" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#24292F">Olympics CSV Files</text>
+
+  <!-- Node B: Azure Blob Storage -->
+  <rect x="210" y="140" width="80" height="80" rx="10" fill="#ffffff" stroke="#0078D4" stroke-width="2"/>
+  <g transform="translate(230,160)" fill="#DDEFFC" stroke="#0078D4" stroke-width="2">
+    <rect x="0" y="0" width="40" height="10" rx="3"/>
+    <rect x="0" y="15" width="40" height="10" rx="3"/>
+    <rect x="0" y="30" width="40" height="10" rx="3"/>
+  </g>
+  <text x="250" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#24292F">Azure Blob Storage</text>
+
+  <!-- Node C: Data Factory pipeline -->
+  <rect x="460" y="140" width="80" height="80" rx="10" fill="#ffffff" stroke="#0078D4" stroke-width="2"/>
+  <g transform="translate(480,160)">
+    <rect x="0" y="14" width="40" height="12" rx="6" fill="#DDEFFC" stroke="#0078D4" stroke-width="2"/>
+    <polygon points="14,10 26,20 14,30" fill="#0078D4"/>
+  </g>
+  <text x="500" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#24292F">Data Factory Pipeline</text>
+
+  <!-- Node D: Synapse Dedicated SQL Pool -->
+  <rect x="740" y="140" width="80" height="80" rx="10" fill="#ffffff" stroke="#0078D4" stroke-width="2"/>
+  <g transform="translate(760,160)" fill="#DDEFFC" stroke="#0078D4" stroke-width="2">
+    <path d="M2,8 A18,6 0 0 1 38,8 V32 A18,6 0 0 1 2,32 Z"/>
+    <ellipse cx="20" cy="8" rx="18" ry="6"/>
+  </g>
+  <text x="780" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#24292F">Dedicated SQL Pool</text>
+
+  <!-- Node E: Power BI -->
+  <rect x="1070" y="140" width="80" height="80" rx="10" fill="#ffffff" stroke="#0078D4" stroke-width="2"/>
+  <g transform="translate(1090,160)" fill="#F2C811" stroke="#8A5A00" stroke-width="1.5">
+    <rect x="4" y="24" width="8" height="12"/>
+    <rect x="16" y="14" width="8" height="22"/>
+    <rect x="28" y="4" width="8" height="32"/>
+  </g>
+  <text x="1110" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#24292F">Power BI Report</text>
+</svg>
